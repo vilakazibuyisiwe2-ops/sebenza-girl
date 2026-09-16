@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Wallet | Sebenza Girl</title>
+  <meta name="description" content="View your Sebenza Girl balance, withdraw your earnings, and track your transaction history. Minimum withdrawal R200.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">SEBENZA <span class="accent">GIRL</span></a>
+      <ul class="nav-links" data-nav-links>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#how-it-works">How it works</a></li>
+        <li><a href="wallet.html">Wallet</a></li>
+        <li><a href="register.html">Sign up</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="register.html" class="btn btn-outline">Log in</a>
+        <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section style="padding-bottom:28px;">
+    <div class="container">
+      <div class="section-head">
+        <h1>Your wallet</h1>
+        <p>Track what you've earned, what's still held in escrow, and withdraw once you're above R200.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1.4fr; gap:24px; align-items:start;">
+        <div class="balance-card" data-available-balance="1240.00">
+          <span>Available balance</span>
+          <strong>R1,240.00</strong>
+          <div class="balance-row"><span>Pending in escrow</span><span>R450.00</span></div>
+          <div class="balance-row"><span>Total earned (lifetime)</span><span>R8,960.00</span></div>
+          <div class="balance-row"><span>Platform fees paid (lifetime)</span><span>R1,581.75</span></div>
+        </div>
+
+        <div class="form-shell" style="margin:0; max-width:none;">
+          <h3 style="margin-bottom:6px;">Withdraw funds</h3>
+          <p style="font-size:0.88rem; opacity:0.7; margin-bottom:20px;">Minimum withdrawal is R200. Funds are sent to your bank account on file.</p>
+
+          <div id="withdraw-message" class="form-message" role="alert"></div>
+
+          <form id="withdraw-form" novalidate>
+            <div class="field">
+              <label for="withdraw-amount">Amount to withdraw (ZAR)</label>
+              <input type="number" id="withdraw-amount" name="withdraw-amount" min="200" step="10" placeholder="200">
+              <p class="hint">Minimum R200.00 per withdrawal.</p>
+            </div>
+            <div class="field">
+              <label for="bank-account">Bank account</label>
+              <input type="text" id="bank-account" name="bank-account" placeholder="e.g. FNB, account ending 1234" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Request withdrawal</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dim">
+    <div class="container">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab-btn="all">All activity</button>
+        <button class="tab-btn" data-tab-btn="earnings">Earnings</button>
+        <button class="tab-btn" data-tab-btn="withdrawals">Withdrawals</button>
+      </div>
+
+      <div class="tab-panel active" data-tab-panel="all">
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Date</th><th>Description</th><th>Type</th><th>Amount</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>12 Sep 2026</td><td>Gel Manicure — Home Visit</td><td>Earning</td><td>+R382.50</td><td><span class="badge badge-approved">Paid</span></td></tr>
+              <tr><td>10 Sep 2026</td><td>Withdrawal to FNB •1234</td><td>Withdrawal</td><td>−R900.00</td><td><span class="badge badge-approved">Paid</span></td></tr>
+              <tr><td>08 Sep 2026</td><td>CV &amp; Cover Letter</td><td>Earning</td><td>+R297.50</td><td><span class="badge badge-approved">Paid</span></td></tr>
+              <tr><td>05 Sep 2026</td><td>Relaxation Massage — 60 min</td><td>Earning</td><td>+R510.00</td><td><span class="badge badge-pending">In escrow</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-tab-panel="earnings">
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Date</th><th>Description</th><th>Amount</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>12 Sep 2026</td><td>Gel Manicure — Home Visit</td><td>+R382.50</td><td><span class="badge badge-approved">Paid</span></td></tr>
+              <tr><td>08 Sep 2026</td><td>CV &amp; Cover Letter</td><td>+R297.50</td><td><span class="badge badge-approved">Paid</span></td></tr>
+              <tr><td>05 Sep 2026</td><td>Relaxation Massage — 60 min</td><td>+R510.00</td><td><span class="badge badge-pending">In escrow</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-panel" data-tab-panel="withdrawals">
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Date</th><th>Bank account</th><th>Amount</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>10 Sep 2026</td><td>FNB •1234</td><td>−R900.00</td><td><span class="badge badge-approved">Paid</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo">SEBENZA <span class="accent">GIRL</span></a>
+          <p style="margin-top:14px; max-width: 40ch;">Services at your fingertips — booked, verified and paid safely.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="services.html">All services</a></li>
+            <li><a href="register.html">Become a provider</a></li>
+            <li><a href="register.html">Sign up as a client</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="terms.html">Terms of service</a></li>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Trust &amp; safety</h4>
+          <ul>
+            <li><a href="verify-documents.html">Verification process</a></li>
+            <li><a href="wallet.html">Payments &amp; withdrawals</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Sebenza Girl. All rights reserved.</span>
+        <span>18+ platform. South Africa.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
