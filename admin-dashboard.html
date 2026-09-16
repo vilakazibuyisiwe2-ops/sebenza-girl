@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Sebenza Girl</title>
+  <meta name="description" content="Sebenza Girl admin dashboard — review document verifications and release escrowed payments.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">SEBENZA <span class="accent">GIRL</span></a>
+      <ul class="nav-links" data-nav-links>
+        <li><a href="admin-dashboard.html">Dashboard</a></li>
+        <li><a href="index.html">View site</a></li>
+      </ul>
+      <div class="nav-actions">
+        <span class="badge badge-approved">Admin</span>
+        <button class="nav-toggle" data-nav-toggle aria-label="Toggle menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section style="padding-bottom:28px;">
+    <div class="container">
+      <div class="section-head">
+        <h1>Admin dashboard</h1>
+        <p>Review new verifications and release payments held in escrow.</p>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><span>Pending verifications</span><strong>3</strong></div>
+        <div class="stat-card"><span>Pending payment releases</span><strong>2</strong></div>
+        <div class="stat-card"><span>Escrow held right now</span><strong>R1,050.00</strong></div>
+        <div class="stat-card"><span>Platform fees this month</span><strong class="gold">R2,340.75</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="section-head">
+        <h2>Pending verifications</h2>
+        <p>Check ID and selfie match before approving. Rejected accounts can resubmit.</p>
+      </div>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Name</th><th>Role</th><th>Submitted</th><th>Documents</th><th>Status</th><th>Action</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Naledi M.</td>
+              <td>Client</td>
+              <td>14 Sep 2026</td>
+              <td>ID, selfie</td>
+              <td data-status-cell><span class="badge badge-pending">Pending</span></td>
+              <td>
+                <button class="btn btn-primary" data-approve-btn>Approve</button>
+                <button class="btn btn-outline" style="color:var(--ink); border-color:var(--line-dark);" data-reject-btn>Reject</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Thandeka K.</td>
+              <td>Provider — Massage</td>
+              <td>13 Sep 2026</td>
+              <td>ID, selfie, certificate</td>
+              <td data-status-cell><span class="badge badge-pending">Pending</span></td>
+              <td>
+                <button class="btn btn-primary" data-approve-btn>Approve</button>
+                <button class="btn btn-outline" style="color:var(--ink); border-color:var(--line-dark);" data-reject-btn>Reject</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Buhle S.</td>
+              <td>Provider — Writing</td>
+              <td>12 Sep 2026</td>
+              <td>ID, selfie</td>
+              <td data-status-cell><span class="badge badge-pending">Pending</span></td>
+              <td>
+                <button class="btn btn-primary" data-approve-btn>Approve</button>
+                <button class="btn btn-outline" style="color:var(--ink); border-color:var(--line-dark);" data-reject-btn>Reject</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dim">
+    <div class="container">
+      <div class="section-head">
+        <h2>Pending payment releases</h2>
+        <p>Both client and provider have marked the job complete. Confirm and release to the provider, minus the 15% fee.</p>
+      </div>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Booking</th><th>Client</th><th>Provider</th><th>Total</th><th>Fee (15%)</th><th>Payout</th><th>Status</th><th>Action</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#SG-1042</td>
+              <td>Naledi M.</td>
+              <td>Thandeka K.</td>
+              <td>R600.00</td>
+              <td>R90.00</td>
+              <td>R510.00</td>
+              <td data-status-cell><span class="badge badge-pending">Awaiting release</span></td>
+              <td><button class="btn btn-primary" data-release-btn>Release</button></td>
+            </tr>
+            <tr>
+              <td>#SG-1038</td>
+              <td>Karabo P.</td>
+              <td>Buhle S.</td>
+              <td>R450.00</td>
+              <td>R67.50</td>
+              <td>R382.50</td>
+              <td data-status-cell><span class="badge badge-pending">Awaiting release</span></td>
+              <td><button class="btn btn-primary" data-release-btn>Release</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none; padding-top:0;">
+        <span>© 2026 Sebenza Girl. Admin area — internal use only.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
